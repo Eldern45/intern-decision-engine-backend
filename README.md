@@ -24,4 +24,14 @@ try {
 }
 ```
 - just verify inputs: `verifyInputs(personalCode, loanAmount, loanPeriod);`
-- The creditModifier is only relevant to a single calculation. Storing it as a class-level field implies that it can be used by multiple threads simultaneously because DecisionEngine is a singleton. The field would be overwritten whenever two or more requests are processed at once, which could cause incorrect results. It is better to declare creditModifier in the method.
+- (I am not sure.) The creditModifier is only relevant to a single calculation. Storing it as a class-level field implies that it can be used by multiple threads simultaneously because DecisionEngine is a singleton bean. The field would be overwritten whenever two or more requests are processed at once, which could cause incorrect results. It is better to declare creditModifier in the method.
+- (Also not sure.) the response bean in DecisionEngineController is not defined with request scope, so the data could be corrupted between requests.
+- Single Responsibility Principle in the DesicionEngine class is violated. That is not really an issue in this realization but it is better to divide this class by two (For example, LoanValidator and DecisionEngine). If the program is more complex, then the validation logic will be easier to change.
+
+## Most critical shortcoming of the backend
+
+- The MAXIMUM_LOAN_PERIOD constant was incorrectly put. The value should be 48 instead of 60. This was fixed.
+
+<br />
+
+TICKET-101 validation for the frontend can be found [here](https://github.com/Eldern45/intern-decision-engine-frontend).
