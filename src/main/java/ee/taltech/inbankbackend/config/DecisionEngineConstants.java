@@ -12,5 +12,7 @@ public class DecisionEngineConstants {
     public static final Integer SEGMENT_2_CREDIT_MODIFIER = 300;
     public static final Integer SEGMENT_3_CREDIT_MODIFIER = 1000;
     public static final Integer MINIMUM_AGE = 18;
+
+    // Assuming that the maximum age (arbitrary) is 70 years + 48 months = 74 years
     public static final Integer MAXIMUM_AGE = 70;
 }
