@@ -1,5 +1,5 @@
 # InBank TICKET-101 Validation
-
+Frontend [link](https://github.com/Eldern45/intern-decision-engine-frontend)
 ## Overall Observation
 
 For the most part, the backend and frontend code work correctly. The intern used service and controller layers, where the service is responsible for the main logic and the controller manages HTTP requests. The frontend is also well-structured, separating out UI components and handling API requests correctly. The code is generally clean and well-organized. It is possible to highlight where the intern has done a good job. However, there are several suggestions for improvement and one major issue that led to a violation of TICKET-101. Below is a detailed review of the intern's code:
